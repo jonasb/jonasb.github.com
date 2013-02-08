@@ -1,0 +1,8 @@
+# GitHub defauls
+safe: true
+pygments: true
+lsi: false
+
+#
+permalink: '/:title'
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
