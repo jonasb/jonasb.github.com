@@ -53,9 +53,8 @@ It's very well documented over [here](https://developers.google.com/chrome-devel
 
 Well, it's extremely easy. After the initial settings, launching it is just a few commands away:
 
-```
-➤ adb forward tcp:9222 localabstract:chrome_devtools_remote && open http://localhost:9222
-```
+    ➤ adb forward tcp:9222 localabstract:chrome_devtools_remote
+    ➤ open http://localhost:9222
 
 ## Step 5) get a WebSocket server running on the phone
 
