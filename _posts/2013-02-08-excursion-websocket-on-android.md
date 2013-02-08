@@ -11,19 +11,15 @@ There are a lot of full featured WebSocket servers out there. I want something s
 
 Cloning the repo and starting an echo server is easy enough.
 
-```
-➤ git clone https://github.com/gimite/web-socket-ruby.git
-➤ cd web-socket-ruby
-➤ ruby samples/echo_server.rb localhost 10081
-```
+    ➤ git clone https://github.com/gimite/web-socket-ruby.git
+    ➤ cd web-socket-ruby
+    ➤ ruby samples/echo_server.rb localhost 10081
 
 ## Step 2) try a WebSocket client on desktop
 
 WebSocket.org has a simple [echo client](http://www.websocket.org/echo.html). It works against the default `ws://echo.websocket.org/` URI. Changing `wsUri` to `ws://localhost:10081/` causes the server to barf some errors.
 
-```
-web-socket-ruby/lib/web_socket.rb:63:in `initialize': Unaccepted origin: null (server.accepted_domains = ["localhost"])
-```
+    web-socket-ruby/lib/web_socket.rb:63:in `initialize': Unaccepted origin: null (server.accepted_domains = ["localhost"])
 
 That's probably due to the web page being opened with `file://` instead of being served by a server. Least resistance: comment out the origin checks in `web-socket-ruby/lib/web-socket.rb`. Now it works :-)
 
@@ -67,33 +63,35 @@ Well, it's extremely easy. After the initial settings, launching it is just a fe
 
 Least resistance: start a WebSocket server in an `Activity`'s `onCreate()`.
 
-```java
-// Initialize and start echo server
-final int port = 8080;
-WebSocketImpl.DEBUG = true;
-WebSocketServer server = new WebSocketServer(
-		new InetSocketAddress(port)) {
-	@Override
-	public void onClose(WebSocket conn, int code, String reason,
-			boolean remote) {
-		Log.d("SERVER", "onClose()");
-	}
-	@Override
-	public void onError(WebSocket conn, Exception ex) {
-		Log.d("SERVER", "onError()", ex);
-	}
-	@Override
-	public void onMessage(WebSocket conn, String message) {
-		Log.d("SERVER", String.format("onMessage(%s)", message));
-		conn.send(message);
-	}
-	@Override
-	public void onOpen(WebSocket conn, ClientHandshake handshake) {
-		Log.d("SERVER", "onOpen()");
-	}
-};
-server.start();
-```
+    // Initialize and start echo server
+    final int port = 8080;
+    WebSocketImpl.DEBUG = true;
+    WebSocketServer server = new WebSocketServer(
+            new InetSocketAddress(port)) {
+        @Override
+        public void onClose(WebSocket conn, int code, String reason,
+                boolean remote) {
+            Log.d("SERVER", "onClose()");
+        }
+    
+        @Override
+        public void onError(WebSocket conn, Exception ex) {
+            Log.d("SERVER", "onError()", ex);
+        }
+    
+        @Override
+        public void onMessage(WebSocket conn, String message) {
+            Log.d("SERVER", String.format("onMessage(%s)", message));
+            conn.send(message);
+        }
+    
+        @Override
+        public void onOpen(WebSocket conn, ClientHandshake handshake) {
+            Log.d("SERVER", "onOpen()");
+        }
+    };
+    
+    server.start();
 
 This will start an echo server in a background thread. It's not proper, one main issue is that it never stops the server. We should honor the Android activity life cycle, but it'll work for now. Also we have to remember to add `android.permission.INTERNET` to `AndroidManifest.xml`.
 
