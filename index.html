@@ -3,11 +3,13 @@ layout: default
 title: Jonas Bengtsson
 ---
 
-<ul id="posts" class="twelve columns offset-by-four">
+<div class="row">
+<ul id="posts" class="offset3 span9">
   {% for post in site.posts %}
-    <li>
-      <a class="nine columns" href="{{ post.url }}">{{ post.title }}</a>
-      <span class="two columns">{{ post.date | date: "%b %Y" }}</span>
+    <li class="row">
+      <a class="span6" href="{{ post.url }}">{{ post.title }}</a>
+      <span class="span3">{{ post.date | date: "%b %Y" }}</span>
     </li>
   {% endfor %}
 </ul>
+</div>
