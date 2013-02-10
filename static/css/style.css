@@ -1,10 +1,20 @@
-#sidebar ul {
-  list-style: none;
+#sidebar {
+  margin: 40px auto 0px auto;
+  width: 200px;
+}
+
+#me {
+  margin: 20px 0px;
+  font-size: 20px;
+}
+
+#me li {
+  margin: 10px 0px;
 }
 
 #avatar {
-  border-radius: 50%;
   opacity: 0.8;
+  margin: 20px 0px;
 }
 
 #sidebar i {
@@ -24,7 +34,11 @@
 }
 
 ul#posts {
-  list-style: none;
   font-size: 23px;
   margin-top: 60px;
+}
+
+#date-header {
+  font-size: 23px;
+  margin: 20px 0px;
 }

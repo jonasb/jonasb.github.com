@@ -10,37 +10,28 @@
     <link href="http://jonasb.github.com/atom.xml" rel="alternate" title="jonasb" type="application/atom+xml" />
   </head>
   <body>
-    <div class="container">
-      <div id="sidebar" class='visible-phone span2'>
-        <ul>
-          <li><a href='/'>Home</a></li>
-          <li><span class="gray">Jonas Bengtsson</span></li>
-          <li><a href="mailto:jonas.b@gmail.com">jonas.b@gmail.com</a></li>
-          <li><a href="http://twitter.com/jonasb">@jonasb</a></li>
-        </ul>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div id="sidebar">
+            <a href="/"><img id="avatar" class="img-circle" src="/static/images/avatar.jpg"></a><br>
+
+            <a href="mailto:jonas.b@gmail.com" title="E-mail"><i class="icon-envelope-alt"></i></a>
+            <a href="http://se.linkedin.com/in/jonasbengtsson/" title="LinkedIn"><i class="icon-linkedin-sign"></i></a>
+            <a href="http://twitter.com/jonasb" title="Twitter"><i class="icon-twitter"></i></a>
+            <a href="http://github.com/jonasb" title="GitHub"><i class="icon-github"></i></a>
+            <a href="https://plus.google.com/102595450120395672452?rel=author" title="Google+"><i class="icon-google-plus"></i></a>
+
+            <ul id="me" class="unstyled">
+              <li>Jonas Bengtsson</span></li>
+              <li class="muted">Malmö, Sweden</li>
+            </ul>
+          </div>
+        </div>
+        <div class="span9">
+          {{ content }}
+        </div>
       </div>
-
-      <div id="sidebar" class="hidden-phone span3 affix">
-        <section>
-          <p class="text-center">
-          <a href="/"><img id="avatar" src="/static/images/avatar.jpg"></a><br>
-
-              <a href="mailto:jonas.b@gmail.com" title="E-mail"><i class="icon-envelope-alt"></i></a>
-              <a href="http://se.linkedin.com/in/jonasbengtsson/" title="LinkedIn"><i class="icon-linkedin-sign"></i></a>
-              <a href="http://twitter.com/jonasb" title="Twitter"><i class="icon-twitter"></i></a>
-              <a href="http://github.com/jonasb" title="GitHub"><i class="icon-github"></i></a>
-              <a href="https://plus.google.com/102595450120395672452?rel=author" title="Google+"><i class="icon-google-plus"></i></a>
-          </p>
-
-          <ul id="me">
-            <li>Jonas Bengtsson</span></li>
-            <li>Malmö, Sweden</li>
-          </ul>
-
-        </section>
-      </div>
-
-      {{ content }}
     </div>
   </body>
 </html>
