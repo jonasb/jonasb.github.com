@@ -3,19 +3,19 @@ layout: default
 blog: true
 ---
 
-<article id="article-content">
-  <header id="article-header">
-    <h1>{{ page.title }}</h1>
+<article>
+  <header class="row">
+    <h1 class="span7">{{ page.title }}</h1>
+    <div id="date-header" class="span2 muted">
+      {{ page.date | date: "%b %Y" }}
+    {% if page.updated_at %}
+      revised {{ page.updated_at }}
+    {% endif %}
+    </div>
   </header>
 
-  <div id="date-header" class="muted">
-    {{ page.date | date: "%b %Y" }}
-  {% if page.updated_at %}
-    revised {{ page.updated_at }}
-  {% endif %}
-  </div>
 
-  <div id="article-content">
+  <div>
     {{ content }}
   </div>
 </article>

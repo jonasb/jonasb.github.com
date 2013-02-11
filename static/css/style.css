@@ -4,12 +4,8 @@
 }
 
 #me {
-  margin: 20px 0px;
   font-size: 20px;
-}
-
-#me li {
-  margin: 10px 0px;
+  font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #avatar {
@@ -34,11 +30,13 @@
 }
 
 ul#posts {
-  font-size: 23px;
+  font-size: 26px;
   margin-top: 60px;
+  font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #date-header {
   font-size: 23px;
   margin: 20px 0px;
+  font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
