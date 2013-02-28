@@ -35,6 +35,10 @@ ul#posts {
   font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+ul#posts li {
+  margin-bottom: 12px;
+}
+
 #date-header {
   font-size: 23px;
   margin: 20px 0px;
