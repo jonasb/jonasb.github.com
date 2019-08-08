@@ -1,6 +1,6 @@
 # GitHub defauls
 safe: true
-pygments: true
+highlighter: rouge
 lsi: false
 markdown: kramdown
 
