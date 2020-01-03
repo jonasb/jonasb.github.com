@@ -11,6 +11,8 @@
 #avatar {
   opacity: 0.8;
   margin: 20px 0px;
+  width: 150px;
+  height: 150px;
 }
 
 #sidebar i {
