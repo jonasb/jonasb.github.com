@@ -3,6 +3,8 @@ layout: post
 title: Tooling — GitHub Actions for Android (and deep dive into problem matchers)
 ---
 
+**Edit:** Updated after finding [official documentation](https://github.com/actions/toolkit/blob/master/docs/problem-matchers.md).
+
 (This post is a deep dive into how to problem matchers work on GitHub Actions and how to develop your own. If you just want to enable problem matchers for your Android workflows, scroll to the end.)
 
 Getting started with [GitHub Actions](https://github.com/features/actions) for Android is very straightforward. Basically just add this file (e.g. as `.github/workflows/continuous-integration-workflow.yml`):
@@ -24,9 +26,11 @@ jobs:
         ./gradlew build
 ```
 
-One of the really nice features about GitHub Actions as a CI tool is it's ability to pick up errors and warnings in the logs and annotate the PRs inline. However, as far as I can tell there are/were no actions on the [marketplace](https://github.com/marketplace?type=actions) that support Android warnings and errors, so you end up spending a lot of time scrolling through logs. Also, at the time of this writing, GitHub [don't seem to have documented how to do it](https://github.community/t5/GitHub-Actions/problemMatcher-documentation/td-p/33160). Your best bet is to figure it out by looking at existing open source GitHub Actions projects.
+One of the really nice features about GitHub Actions as a CI tool is it's ability to pick up errors and warnings in the logs and annotate the PRs inline. However, as far as I can tell there are/were no actions on the [marketplace](https://github.com/marketplace?type=actions) that support Android warnings and errors, so you end up spending a lot of time scrolling through logs.
 
-Adding a new problem matcher you add a log line using a special format, which points to a JSON file that defines what GitHub should look for in the logs to identify problems. If your JSON file is called `.github/gradle-matcher.json`, add this to your workflow's step `echo "::add-matcher::.github/gradle-matcher.json"`. When successful GitHub will show this in the logs:
+The official documentation of problem matchers can be found in the [actions/toolkit](https://github.com/actions/toolkit/blob/master/docs/problem-matchers.md) repo.
+
+In order to add a new problem matcher you add a log line using a special format, which points to a JSON file that defines what GitHub should look for in the logs to identify problems. If your JSON file is called `.github/gradle-matcher.json`, add this to your workflow's step `echo "::add-matcher::.github/gradle-matcher.json"`. When successful GitHub will show this in the logs:
 
 ```
 Added matchers: 'gradle'. Problem matchers scan action output for known warning or error strings and report these inline.
@@ -247,4 +251,4 @@ android {
       uses: jonasb/android-problem-matchers-action@v1
 ```
 
-All in all, problem matchers are easy to add to GitHub Actions and makes it a very extensible CI platform. The main missing part at this stage for me is official documentation.
+All in all, problem matchers are easy to add to GitHub Actions and makes it a very extensible CI platform.
