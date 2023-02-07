@@ -7,7 +7,7 @@ layout: nil
  <link href="https://jonasb.github.io/atom.xml" rel="self" />
  <link href="https://jonasb.github.io/" />
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>https://jonasb.github.io</id>
+ <id>https://jonasb.github.io/</id>
  <author>
     <name>Jonas Bengtsson</name>
     <email>jonas.b@gmail.com</email>
