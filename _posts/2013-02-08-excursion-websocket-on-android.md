@@ -25,7 +25,7 @@ That's probably due to the web page being opened with `file://` instead of being
 
 ## Step 3) try the client on Chrome on Android
 
-According to [Can I use WebSockets?](http://caniuse.com/websockets) my browser choices on Android are Chrome for Android, Opera Mobile and Firefox for Android. Chrome is my browser of choice.
+According to [Can I use WebSockets?](https://caniuse.com/websockets) my browser choices on Android are Chrome for Android, Opera Mobile and Firefox for Android. Chrome is my browser of choice.
 
 Changing `wsUri` once more to match the IP of my laptop, I upload the HTML file to my phone and open it in Chrome for Android.
 
@@ -72,24 +72,24 @@ Least resistance: start a WebSocket server in an `Activity`'s `onCreate()`.
                 boolean remote) {
             Log.d("SERVER", "onClose()");
         }
-    
+
         @Override
         public void onError(WebSocket conn, Exception ex) {
             Log.d("SERVER", "onError()", ex);
         }
-    
+
         @Override
         public void onMessage(WebSocket conn, String message) {
             Log.d("SERVER", String.format("onMessage(%s)", message));
             conn.send(message);
         }
-    
+
         @Override
         public void onOpen(WebSocket conn, ClientHandshake handshake) {
             Log.d("SERVER", "onOpen()");
         }
     };
-    
+
     server.start();
 
 This will start an echo server in a background thread. It's not proper, one main issue is that it never stops the server. We should honor the Android activity life cycle, but it'll work for now. Also we have to remember to add `android.permission.INTERNET` to `AndroidManifest.xml`.
