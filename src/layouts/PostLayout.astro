@@ -1,0 +1,22 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PostHeader from '../components/PostHeader.astro';
+
+interface Props {
+  title: string;
+  date: Date;
+  updated_at?: string;
+}
+
+const { title, date, updated_at } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <article>
+    <PostHeader title={title} date={date} updated_at={updated_at} />
+
+    <div>
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

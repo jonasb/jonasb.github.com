@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  updated_at?: string;
+}
+
+const { title, date, updated_at } = Astro.props;
+
+// Format date as "Mon YYYY" (e.g., "Feb 2023")
+const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+---
+
+<header class="row">
+  <h1 class="span7">{title}</h1>
+  <div id="date-header" class="span2 muted">
+    {formattedDate}
+    {updated_at && (
+      <>
+        <br />
+        revised {updated_at}
+      </>
+    )}
+  </div>
+</header>

@@ -1,0 +1,35 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+
+    <link href="/styles/bootstrap.css" rel="stylesheet">
+    <link href="/styles/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet">
+    <link href="https://jonasb.github.io/atom.xml" rel="alternate" title="jonasb" type="application/atom+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <Sidebar />
+        </div>
+        <div class="span9">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

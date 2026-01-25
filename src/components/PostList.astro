@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'posts'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul id="posts" class="unstyled">
+  {posts.map((post) => {
+    const formattedDate = post.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    return (
+      <li class="row">
+        <a class="span6" href={`/${post.slug}`}>{post.data.title}</a>
+        <span class="span3 muted">{formattedDate}</span>
+      </li>
+    );
+  })}
+</ul>

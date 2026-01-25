@@ -1,0 +1,48 @@
+#sidebar {
+  margin: 40px auto 0px auto;
+  width: 200px;
+}
+
+#me {
+  font-size: 20px;
+  font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#avatar {
+  opacity: 0.8;
+  margin: 20px 0px;
+  width: 150px;
+  height: 150px;
+}
+
+#sidebar i {
+  font-size: 25px;
+}
+
+#sidebar a, #sidebar a:visited {
+  color: #999;
+  -webkit-transition:color 200ms ease-in;
+  -moz-transition:color 200ms ease-in;
+  -o-transition:color 200ms ease-in;
+  text-decoration: none;
+}
+
+#sidebar a:hover, #sidebar a:visited:hover {
+  color: #423F37;
+}
+
+ul#posts {
+  font-size: 26px;
+  margin-top: 60px;
+  font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ul#posts li {
+  margin-bottom: 12px;
+}
+
+#date-header {
+  font-size: 23px;
+  margin: 20px 0px;
+  font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
