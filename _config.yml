@@ -1,9 +1,0 @@
-# GitHub defauls
-safe: true
-highlighter: rouge
-lsi: false
-markdown: kramdown
-
-#
-permalink: '/:title'
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'vendor']
