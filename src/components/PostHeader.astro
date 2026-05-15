@@ -11,10 +11,10 @@ const { title, date, updated_at } = Astro.props;
 const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 ---
 
-<header class="md:-ml-5">
-  <div class="flex flex-wrap md:flex-nowrap">
-    <h1 class="w-full md:w-[540px] xl:w-[670px] md:ml-5 text-5xl font-bold leading-[1.1] my-[13.5px]">{title}</h1>
-    <div id="date-header" class="w-full md:w-[140px] xl:w-[170px] md:ml-5 text-muted">
+<header class="lg:-ml-5">
+  <div class="flex flex-wrap lg:flex-nowrap">
+    <h1 class="w-full lg:w-[540px] xl:w-[670px] lg:ml-5 text-5xl font-bold leading-[1.1] my-[13.5px]">{title}</h1>
+    <div id="date-header" class="w-full lg:w-[140px] xl:w-[170px] lg:ml-5 text-muted">
       {formattedDate}
       {updated_at && (
         <>
