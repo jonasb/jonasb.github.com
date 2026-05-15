@@ -1,7 +1,33 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-muted: #999999;
+}
+
+/* Post body typography (prose) */
+.prose {
+  --tw-prose-body: #333333;
+  --tw-prose-headings: #333333;
+  --tw-prose-links: #0088cc;
+  line-height: 1.5;
+}
+
+/* Match the site's tighter vertical rhythm (prose-lg defaults are looser) */
+.prose p {
+  margin-top: 0;
+  margin-bottom: 13.5px;
+  line-height: 1.5;
+}
+
+/* Keep links in the site's blue, no underline (matches global a styling) */
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+  text-decoration: none;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)):hover {
+  color: #005580;
+  text-decoration: underline;
 }
 
 @layer base {
@@ -10,6 +36,10 @@
     font-size: 18px;
     line-height: 27px;
     color: #333333;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   a {
