@@ -2,14 +2,14 @@
 
 ## Development
 ```bash
-npm install        # Install dependencies
-npm run dev        # Start local development server
+pnpm install       # Install dependencies
+pnpm dev           # Start local development server
 ```
 
 ## Production Build
 ```bash
-npm run build      # Build for production
-npm run preview    # Preview production build locally
+pnpm build         # Build for production
+pnpm preview       # Preview production build locally
 ```
 
 ## Deployment
