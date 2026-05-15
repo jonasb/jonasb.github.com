@@ -8,13 +8,13 @@ interface Props {
 const { posts } = Astro.props;
 ---
 
-<ul id="posts" class="unstyled">
+<ul id="posts" class="list-none md:-ml-5">
   {posts.map((post) => {
     const formattedDate = post.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
     return (
-      <li class="row">
-        <a class="span6" href={`/${post.slug}`}>{post.data.title}</a>
-        <span class="span3 muted">{formattedDate}</span>
+      <li class="flex flex-wrap md:flex-nowrap">
+        <a class="w-full md:w-[460px] xl:w-[570px] md:ml-5" href={`/${post.id}`}>{post.data.title}</a>
+        <span class="w-full md:w-[220px] xl:w-[270px] md:ml-5 text-muted md:text-right">{formattedDate}</span>
       </li>
     );
   })}

@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "astro": "^6.1.10",
-    "@astrojs/rss": "^4.0.9"
+    "@astrojs/rss": "^4.0.18",
+    "@tailwindcss/vite": "^4.1.18"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
   }
 }

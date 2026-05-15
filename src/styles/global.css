@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-muted: #999999;
+}
+
+@layer base {
+  body {
+    font-family: Lora, Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 27px;
+    color: #333333;
+  }
+
+  a {
+    color: #0088cc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #005580;
+    text-decoration: underline;
+  }
+}

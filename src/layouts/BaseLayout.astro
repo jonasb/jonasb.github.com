@@ -1,5 +1,6 @@
 ---
 import Sidebar from '../components/Sidebar.astro';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -14,19 +15,19 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <title>{title}</title>
 
-    <link href="/styles/bootstrap.css" rel="stylesheet">
-    <link href="/styles/bootstrap-responsive.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet">
     <link href="/styles/style.css" rel="stylesheet">
     <link href="https://jonasb.github.io/atom.xml" rel="alternate" title="jonasb" type="application/atom+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="span3">
+    <div class="max-w-[940px] xl:max-w-[1170px] mx-auto px-5 md:px-0">
+      <div class="flex flex-wrap md:-ml-5 xl:-ml-[30px]">
+        <div class="w-full md:w-[220px] xl:w-[270px] md:ml-5 xl:ml-[30px]">
           <Sidebar />
         </div>
-        <div class="span9">
+        <div class="w-full md:w-[700px] xl:w-[870px] md:ml-5 xl:ml-[30px]">
           <slot />
         </div>
       </div>

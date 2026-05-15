@@ -13,7 +13,7 @@ export async function GET(context: APIContext) {
     items: sortedPosts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
-      link: `/${post.slug}`,
+      link: `/${post.id}`,
     })),
   });
 }
