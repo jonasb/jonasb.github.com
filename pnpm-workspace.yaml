@@ -1,3 +1,6 @@
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - yaml@2.8.3
+  - devalue@5.8.1
